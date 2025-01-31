@@ -182,7 +182,7 @@ document.getElementById("signupForm").addEventListener("submit", async (e) => {
 
     try {
         
-        const endpoint = "http://localhost:5253/api/User/register"
+        const endpoint = "http://localhost:4003/user/register"
         const response = await fetch(endpoint , {
             method: "POST",
             headers: {
@@ -195,14 +195,13 @@ document.getElementById("signupForm").addEventListener("submit", async (e) => {
         const data = await response.json()
         console.log(data)
 
-      /*  if(data.existinguser) {
+        if(data.success) {
             window.alert(data.message)
            
         }
         else {
-            window.alert("Error")
-        }*/
-
+            window.alert("Error creating user")
+        }
 
 
     } catch (error) {
